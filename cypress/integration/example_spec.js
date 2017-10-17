@@ -1,4 +1,12 @@
+// @ts-check
 describe('todos API', () => {
+  /**
+   * @typedef {Object} Todo
+   * @property {number} id
+   * @property {string} task
+   */
+
+   /** @type {Todo[]} */
   const initialItems = [
     {
       "id": 1,
@@ -14,6 +22,7 @@ describe('todos API', () => {
     cy.request('/todos')
       .its('body')
 
+  /** @type {(todo:Todo) => Cypress.Chainable} */
   const add = item =>
     cy.request('POST', '/todos', item)
 
