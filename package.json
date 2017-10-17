@@ -1,0 +1,23 @@
+{
+  "name": "cypress-example-api-testing",
+  "version": "1.0.0",
+  "description": "Cypress E2E runner can also test Rest and other APIs",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "start": "json-server db.json",
+    "test": "run-p --race start cy:run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^1.0.2",
+    "npm-run-all": "^4.1.1"
+  },
+  "dependencies": {
+    "json-server": "^0.12.0"
+  }
+}
