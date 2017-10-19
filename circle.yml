@@ -4,6 +4,5 @@ machine:
 
 test:
   override:
-    - npm install
     - $(npm bin)/cypress verify
     - npm test
