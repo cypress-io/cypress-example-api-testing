@@ -15,6 +15,24 @@ describe('todos API', () => {
     cy.request('/todos')
       .its('body')
 
+  const add = item =>
+    cy.request('POST', '/todos', item)
+
+  const deleteItem = item =>
+    cy.request('DELETE', `/todos/${item.id}`)
+
+  const deleteAll = () =>
+    getItems()
+      .each(deleteItem)
+
+  const reset = () => {
+    deleteAll()
+    initialItems.forEach(add)
+  }
+
+  beforeEach(reset)
+  afterEach(reset)
+
   it('returns JSON', () => {
     cy.request('/todos')
       .its('headers')
@@ -37,5 +55,22 @@ describe('todos API', () => {
       .each(value =>
         expect(value).to.have.all.keys('id', 'task')
       )
+  })
+
+  it('adds an item', () => {
+    const randomId = Cypress._.random(0, 10000)
+    const item = {id:randomId, task:'life'}
+
+    add(item)
+    cy.request(`/todos/${randomId}`)
+      .its('body')
+      .should('deep.eq', item)
+  })
+
+  it('deletes an item', () => {
+    const id = initialItems[0].id
+    cy.request('DELETE', `/todos/${id}`)
+    getItems()
+      .should('have.length', 1)
   })
 })
