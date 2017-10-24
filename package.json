@@ -10,7 +10,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "cypress": "^1.0.2"
+  },
   "dependencies": {
     "json-server": "^0.12.0"
   }
