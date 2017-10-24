@@ -11,23 +11,35 @@ describe('todos API', () => {
     }
   ]
 
-  const getItems = () =>
-    cy.request('/todos')
-      .its('body')
+  const getItems = (options = {log: false}) =>
+    cy.request({
+      url: '/todos',
+      method: 'GET',
+      log: options.log
+    }).its('body')
 
-  const add = item =>
-    cy.request('POST', '/todos', item)
+  const add = (item, options = {log: true}) =>
+    cy.request({
+      method: 'POST',
+      url: '/todos',
+      body: item,
+      log: options.log
+    })
 
-  const deleteItem = item =>
-    cy.request('DELETE', `/todos/${item.id}`)
+  const deleteItem = (item, options = {log: true}) =>
+    cy.request({
+      method: 'DELETE',
+      url: `/todos/${item.id}`,
+      log: options.log
+    })
 
   const deleteAll = () =>
     getItems()
-      .each(deleteItem)
+      .each((item) => deleteItem(item, {log: false}))
 
   const reset = () => {
     deleteAll()
-    initialItems.forEach(add)
+    initialItems.forEach((item) => add(item, {log: false}))
   }
 
   beforeEach(reset)
