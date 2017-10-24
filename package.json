@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --record",
     "start": "json-server db.json",
     "test": "run-p --race start cy:run"
   },
