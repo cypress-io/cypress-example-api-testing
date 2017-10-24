@@ -5,18 +5,12 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "start": "json-server db.json",
-    "test": "run-p --race start cy:run"
+    "start": "json-server db.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "cypress": "^1.0.2",
-    "npm-run-all": "^4.1.1"
-  },
+  "devDependencies": {},
   "dependencies": {
     "json-server": "^0.12.0"
   }

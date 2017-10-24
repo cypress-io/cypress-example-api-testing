@@ -1,8 +1,0 @@
-machine:
-  node:
-    version: 8
-
-test:
-  override:
-    - $(npm bin)/cypress verify
-    - npm test
