@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 8
+    version: 10
 dependencies:
   cache_directories:
     - ~/.npm
