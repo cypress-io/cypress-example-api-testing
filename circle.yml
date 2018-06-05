@@ -1,8 +1,13 @@
 machine:
   node:
     version: 8
+dependencies:
+  cache_directories:
+    - ~/.npm
+    - ~/.cache
 
 test:
   override:
+    - npm ci
     - $(npm bin)/cypress verify
     - npm test
