@@ -1,5 +1,5 @@
 {
   "baseUrl": "http://localhost:3000",
   "projectId": "ghvcei",
-  "videoRecording": false
+  "video": false
 }
