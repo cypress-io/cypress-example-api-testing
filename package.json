@@ -6,9 +6,11 @@
   "private": true,
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run --record",
+    "cy:run": "cypress run",
+    "cy:run:record": "cypress run --record",
     "start": "json-server db.json",
-    "test": "run-p --race start cy:run"
+    "test": "run-p --race start cy:run",
+    "test:ci": "run-p --race start cy:run:record"
   },
   "keywords": [],
   "author": "",
