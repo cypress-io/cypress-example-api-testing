@@ -9,6 +9,8 @@
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/
 
+See related blog post [Add GUI to your E2E API tests](https://www.cypress.io/blog/2017/11/07/add-gui-to-your-e2e-api-tests/)
+
 ## Use
 
 Install dependencies with `npm install` or `npm ci`
