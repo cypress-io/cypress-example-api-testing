@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "4.0.1",
+    "cypress": "4.0.2",
     "npm-run-all": "4.1.5"
   },
   "dependencies": {
